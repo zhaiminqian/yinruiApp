@@ -7,7 +7,6 @@
             <ul>
                 <li class="phone" :class="{active:LoginInActive.one}">
                     <input type="text" placeholder="请输入手机号" v-model="loginIn.phone" @focus="PhoneGetFocus" />
-                    <span>{{phoneText}}</span>
                 </li>
                 <li class="passIcon" :class="{active:LoginInActive.two}">
                     <input type="password" placeholder="请输入密码" v-model="loginIn.pass" @focus="PassGetFocus"/>
