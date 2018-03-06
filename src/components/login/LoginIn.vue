@@ -15,7 +15,8 @@
                     <a href="javascript:;" @click="LoginBtn">登录</a>
                 </li>
                 <li class="regText">
-                    <p>还没有帐号？<a href="javascript:;" @click="SwitchReg">立即注册</a></p>
+                    <p>还没有帐号？<router-link to='/register'>立即注册</router-link></p>
+                    
                 </li>
             </ul>
         </div>

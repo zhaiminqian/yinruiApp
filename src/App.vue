@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import rem from '../static/js/rem.js';
 export default {
   name: 'App'
 }
