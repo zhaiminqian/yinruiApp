@@ -1,10 +1,16 @@
 <template>
     <div>
-        登陆所有页面
+        <login-header style="">
+            <span slot="title">登录</span>
+        </login-header>
     </div>
 </template>
 <script>
+    import LoginHeader from '@/components/login/LoginHeader'
+
     export default {
-    
+        components:{
+            LoginHeader
+        }
     }
 </script>

@@ -23,7 +23,7 @@ input{
     width: 1rem;
     height: 100%;
     display: block;
-    background: url(../images/jt2.png) no-repeat left center;
+    /* background: url(../images/jt2.png) no-repeat left center; */
     background-size: 0.2rem 0.36rem;
     position: absolute;
     left: 0.22rem;
@@ -100,7 +100,7 @@ input{
     width: 0.14rem;
     height: 0.25rem;
     display: inline-block;
-    background: url(../images/opennext.png) no-repeat center;
+    /* background: url(../images/opennext.png) no-repeat center; */
     background-size: cover;
 }
 /* 上传驾照 */
@@ -219,7 +219,7 @@ input{
 
 .playvideo .go{
     display: block;
-    background: url(../images/jt2_w.png) no-repeat center;
+    /* background: url(../images/jt2_w.png) no-repeat center; */
     background-size: cover;
     width: 0.2rem;
     height: 0.36rem;
@@ -266,23 +266,23 @@ input{
 .video .fabulous{
     width: 0.34rem;
     height: 0.38rem;
-    background: url(../images/fabulousicon.png) no-repeat center;
+    /* background: url(../images/fabulousicon.png) no-repeat center; */
     background-size: cover;
     margin-right: 0.3rem;
 }
 .video .fabulous.active{
-    background: url(../images/fabulousiconAc.png) no-repeat center;
+    /* background: url(../images/fabulousiconAc.png) no-repeat center; */
     background-size: cover;
 }
 .video .collection{
     width: 0.4rem;
     height: 0.38rem;
-    background: url(../images/collectionicon.png) no-repeat center;
+    /* background: url(../images/collectionicon.png) no-repeat center; */
     background-size: cover;
     margin-right: 0.2rem;
 }
 .video .collection.active{
-    background: url(../images/collectioniconAc.png) no-repeat center;
+    /* background: url(../images/collectioniconAc.png) no-repeat center; */
     background-size: cover;
 }
 .anthology{
@@ -371,163 +371,6 @@ input{
     width: 100%;
     margin-top: 1.5rem;
 }
-
-/* 登录 */
-.loginTitle{
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    line-height: 0;
-    padding: 0 0.3rem;
-}
-.loginTitle a{
-    display: inline-block;
-    width: 0.33rem;
-    height: 0.33rem;
-    background: url(../images/Loginclose.png) no-repeat center;
-    background-size: cover;
-}
-.login-logo{
-    position: absolute;
-    left: 0;
-    right: 0;
-    text-align: center;
-    top: 12%;
-}
-.login-logo img{
-    width: 3.4rem;
-    height: 1rem;
-}
-
-.login{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 40%;
-    padding: 0 1.15rem;
-}
-.login input[type='text']{
-    font-size: 0.3rem;
-    color: #73757a;
-    border-bottom: 1px solid #dedede;
-    display:block;
-    width: 100%;
-    padding-bottom: 10px;
-    text-indent: 0.5rem;
-    height: 0.7rem;
-    line-height: 0.7rem;
-    
-}
-.login input[type='password']{
-    font-size: 0.3rem;
-    color: #73757a;
-    border-bottom: 1px solid #dedede;
-    display:block;
-    width: 100%;
-    padding-bottom: 10px;
-    text-indent: 0.5rem;
-    height: 0.7rem;
-    line-height: 0.7rem;
-}
-.login button.code{
-    position: absolute;
-    right: 0;
-    top: 3px;
-    font-size: 0.3rem;
-    color: #5495ce;
-
-}
-.login li{
-    margin-bottom: 0.55rem;
-    position: relative;
-    line-height: 0;
-}
-.login li.active input{
-    border-bottom: 1px solid #f6bc0b;
-}
-.login li.Regactive input{
-    border-bottom: 1px solid #d6000f;
-}
-.login .phone::before{
-    position: absolute;
-    content: "";
-    display: block;
-    width: 0.26rem;
-    height: 0.41rem;
-    background: url(../images/loginPhone.png) no-repeat center;
-    background-size: cover;
-    left: 0;
-    top: 3px;
-}
-.login .passIcon::before{
-    position: absolute;
-    content: "";
-    display: block;
-    width: 0.29rem;
-    height: 0.39rem;
-    background: url(../images/loginPass.png) no-repeat center;
-    background-size: cover;
-    left: 0;
-    top: 3px;
-}
-.login .name::before{
-    position: absolute;
-    content: "";
-    display: block;
-    width: 0.38rem;
-    height: 0.38rem;
-    background: url(../images/regren.png) no-repeat center;
-    background-size: cover;
-    left: 0;
-    top: 3px;
-}
-.login .verification::before{
-    position: absolute;
-    content: "";
-    display: block;
-    width: 0.23rem;
-    height: 0.44rem;
-    background: url(../images/regyan.png) no-repeat center;
-    background-size: cover;
-    left: 0;
-    top: 3px;
-}
-.login .loginBtn{
-    line-height: 0;
-}
-.login .loginBtn a{
-    display: inline-block;
-    width: 100%;
-    height: 0.8rem;
-    color: #fff;
-    font-size: 0.3rem;
-    background: #f6bc0b;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 0.8rem;
-}
-.login .regText{
-   font-size: 0.28rem;
-   text-align: center;
-   color:  #73757a;
-}
-.login .regText a{
-    color: #d6000f;
-    display: inline;
-}
-.login-forgetpass{
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0.5rem;
-    text-align: center;
-}
-.login-forgetpass a{
-    display: block;
-    font-size: 0.28rem;
-    color: #73757a;
-}
 .m-reg .prompt{
     font-size: 0.24rem;
     color:#d6000f; 
@@ -572,7 +415,7 @@ input{
     display: block;
     width: 0.26rem;
     height: 0.41rem;
-    background: url(../images/loginPhone.png) no-repeat center;
+    /* background: url(../images/loginPhone.png) no-repeat center; */
     background-size: cover;
     left: 0;
     top: 3px;
@@ -583,7 +426,7 @@ input{
     display: block;
     width: 0.23rem;
     height: 0.44rem;
-    background: url(../images/regyan.png) no-repeat center;
+    /* background: url(../images/regyan.png) no-repeat center; */
     background-size: cover;
     left: 0;
     top: 3px;
@@ -616,7 +459,7 @@ input{
     display: block;
     width: 0.29rem;
     height: 0.39rem;
-    background: url(../images/loginPass.png) no-repeat center;
+    /* background: url(../images/loginPass.png) no-repeat center; */
     background-size: cover;
     left: 0;
     top: 3px;
