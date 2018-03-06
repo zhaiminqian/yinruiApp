@@ -1,9 +1,19 @@
 <template>
-    <header class="title-top forget-title">
-        <a href="" class="go"></a>
+    <header class="title-top">
+        <a href="javascript:;" class="go" @click="ReturnGo"></a>
         <slot name='title'></slot>
     </header>
 </template>
+<script>
+    export default {
+        methods: {
+            ReturnGo(){
+                this.$router.go(-1);
+            }
+        }
+    }
+</script>
+
 <style scoped>
     .title-top{
         background: #f9f9f9;
