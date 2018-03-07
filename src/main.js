@@ -7,6 +7,9 @@ import router from './router'
 // import 'vue-layer-mobile/need/layer.css'
 // import layer from 'vue-layer-mobile'
 // Vue.use(layer)
+import Mint from 'mint-ui';
+import 'mint-ui/lib/style.css'
+Vue.use(Mint);
 
 Vue.config.productionTip = false
 

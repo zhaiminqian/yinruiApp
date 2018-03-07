@@ -4,7 +4,7 @@ import login from '@/views/login'
 import ForgetPass from '@/components/login/ForgetPass'
 import modifyPass from '@/components/login/modifyPass'
 import register from '@/components/login/register.vue'
-
+import info from '@/components/my/info'
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +29,10 @@ export default new Router({
 		{
 			path: '/register',
 			component: register
+		},
+		{
+			path: '/info',
+			component: info
 		}
 	]
 })
