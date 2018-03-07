@@ -39,7 +39,8 @@ export default {
 	}
 	input{
 		-webkit-appearance:none;
-		outline:none
+		outline:none;
+		border:none;
 	}
 	main, article, aside, figure, footer, header, nav, section, details, summary {display: block;}
 

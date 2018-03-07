@@ -4,9 +4,17 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 //layer弹窗
-// import 'vue-layer-mobile/need/layer.css'
-// import layer from 'vue-layer-mobile'
-// Vue.use(layer)
+import 'vue-layer-mobile/need/layer.css'
+import layer from 'vue-layer-mobile'
+Vue.use(layer)
+
+//MinitUi
+import Minit from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(Minit)
+
+// axios
+import axios from 'axios'
 
 Vue.config.productionTip = false
 

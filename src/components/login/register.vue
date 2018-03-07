@@ -316,12 +316,10 @@ input {
 	position: relative;
 	line-height: 0;
 }
-.login li.active input {
+.login li input:focus {
   	border-bottom: 1px solid #f6bc0b;
 }
-.login li.Regactive input {
-  	border-bottom: 1px solid #d6000f;
-}
+
 .login .phone::before {
 	position: absolute;
 	content: "";
@@ -403,7 +401,7 @@ input {
 }
 .m-reg .prompt {
 	font-size: 0.24rem;
-	color: #d6000f;
+	color: #f6bc0b;
 	display: inline-block;
 	position: absolute;
 	bottom: -0.24rem;
