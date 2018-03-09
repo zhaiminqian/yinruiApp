@@ -1,18 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div class="wrapper">
-        index
-    </div>
-</template>
-<script>
-export default {
-  
-}
-</script>
-
-<style scoped>
-    
-=======
     <div>
         <!-- 搜索框 -->
         <search></search>
@@ -169,5 +155,4 @@ export default {
 </script>
 <style scoped>
 
->>>>>>> zmq
 </style>
