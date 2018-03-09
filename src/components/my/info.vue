@@ -16,19 +16,19 @@
                     <p><span class="type">真实姓名：</span><span class="text"><input type="text" placeholder="请输入您的姓名" v-model="userName"></span></p>
                 </li>
                 <li id="cityBtn">
-                    <p><span class="type">所在地：</span><span @click="OptCity" class="text">北京市 北京市 朝阳区</span><a href="javascript:;" class="openNext"></a></p>
+                    <p><span class="type">所在地：</span><span @click="OptCity" class="text">{{cityObj.province}} {{cityObj.city}} {{cityObj.area}}</span><a href="javascript:;" class="openNext"></a></p>
                 </li>
                 <li id="carBtn">
-                    <p><span class="type">是否有车：</span><span id="car"  class="text">是</span><a href="javascript:;" class="openNext"></a></p>
+                    <p><span class="type">是否有车：</span><span @click="OptCar"  class="text">{{carObj.msg}}</span><a href="javascript:;" class="openNext"></a></p>
                 </li>
                 <li id="carTypeBtn">
-                    <p><span class="type">车型：</span><span id="carType" class="text">中型车</span><a href="javascript:;" class="openNext"></a></p>
+                    <p><span class="type">车型：</span><span @click="OptCarType" class="text">{{carTypeObj.msg}}</span><a href="javascript:;" class="openNext"></a></p>
                 </li>
                 <li class="marginTop">
-                    <p><span class="type">驾龄：</span><span class="text"><input type="number" value="" placeholder="请输入您的驾龄"></span></p>
+                    <p><span class="type">驾龄：</span><span class="text"><input type="text" placeholder="请输入您的驾龄" v-model="drivingAge"></span></p>
                 </li>
                 <li id="carYearBtn">
-                    <p><span class="type">曾有车型：</span><span id="carYear"  class="text">中型车</span><a href="javascript:;" class="openNext"></a></p>
+                    <p><span class="type">曾有车型：</span><span @click="carOld"  class="text">{{oldCarTypeObj.msg}}</span><a href="javascript:;" class="openNext"></a></p>
                 </li>
             </ul>
             <!-- sex 数据 -->
@@ -47,11 +47,47 @@
             <mt-popup v-model="cityObj.popupVisible" position="bottom">
                 <div class="picker">
                     <div class="optBtn">
-                        <mt-button type="default">取消</mt-button>
-                        <mt-button type="primary">确定</mt-button>
+                        <mt-button type="default" @click="cityNo">取消</mt-button>
+                        <mt-button type="primary" @click="cityYes">确定</mt-button>
                     </div>
                     <div>
                         <mt-picker :slots="cityObj.slots" @change="onCityChange"></mt-picker>
+                    </div>
+                </div>
+            </mt-popup>
+            <!-- 是否有车 数据 -->
+            <mt-popup v-model="carObj.popupVisible" position="bottom">
+                <div class="picker">
+                    <div class="optBtn">
+                        <mt-button type="default" @click="carNo">取消</mt-button>
+                        <mt-button type="primary" @click="carYes">确定</mt-button>
+                    </div>
+                    <div>
+                        <mt-picker :slots="carObj.slots" @change="onCarChange"></mt-picker>
+                    </div>
+                </div>
+            </mt-popup>
+            <!-- carType 数据 -->
+            <mt-popup v-model="carTypeObj.popupVisible" position="bottom">
+                <div class="picker">
+                    <div class="optBtn">
+                        <mt-button type="default" @click="carTypeNo">取消</mt-button>
+                        <mt-button type="primary" @click="carTypeYes">确定</mt-button>
+                    </div>
+                    <div>
+                        <mt-picker :slots="carTypeObj.slots" @change="onCarTypeChange"></mt-picker>
+                    </div>
+                </div>
+            </mt-popup>
+            <!-- 曾经拥有 carType 数据 -->
+            <mt-popup v-model="oldCarTypeObj.popupVisible" position="bottom">
+                <div class="picker">
+                    <div class="optBtn">
+                        <mt-button type="default" @click="oldCarTypeNo">取消</mt-button>
+                        <mt-button type="primary" @click="oldCarTypeYes">确定</mt-button>
+                    </div>
+                    <div>
+                        <mt-picker :slots="oldCarTypeObj.slots" @change="onOldCarTypeChange"></mt-picker>
                     </div>
                 </div>
             </mt-popup>
@@ -59,14 +95,14 @@
             <div class="driving">
                 <h3>上传驾照</h3>
                 <div class="filebox">
-                    <label for="file" class="z_file_label"><img src="images/fileimg.png" alt="" id="ImgPr" class="z_file_img"></label>
-                    <input type="file" name="file" id="file" class="z_file_input" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple="multiple"/>
+                    <label for="file" class="z_file_label"><img :src="fileObj.drivingLicense" alt="" id="ImgPr" class="z_file_img"></label>
+                    <input type="file" name="file" id='file' @change="fileOne" class="z_file_input" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple="multiple"/>
                     <span>建议图像比列 1：1，宽度不小于1080像素。</span>
                 </div>
                 <h3 class="marginTop">上传行驶本</h3>
                 <div class="filebox">
-                    <label for="file2" class="z_file_label"><img src="images/fileimg.png" id="ImgPr2" alt="" class="z_file_img"></label>
-                    <input type="file" name="file" id="file2" class="z_file_input" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple="multiple"/>
+                    <label for="file2" class="z_file_label"><img :src="fileObj.drivingBook" id="ImgPr2" alt="" class="z_file_img"></label>
+                    <input type="file" name="file" id="file2"  @change="fileTwo" class="z_file_input" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple="multiple"/>
                     <span>建议图像比列 1：1，宽度不小于1080像素。</span>
                 </div>
             </div>
@@ -80,8 +116,7 @@
 <script>
     import LoginHeader from '@/components/login/LoginHeader.vue'
     import myaddress from './city.json'
-    // import { Picker } from 'mint-ui'
-    // Vue.component(Picker.name, Picker);
+    import fileimg from '../../assets/images/fileimg.png';
     export default {
         data () {
             return {
@@ -134,8 +169,57 @@
                         }
 
                     ],
+                    province:"省",
+                    city:"市",
+                    area:"区",
+                    optProvince:"",
+                    optCity:"",
+                    optArea:""
+                },
+                carObj:{
+                    popupVisible:false,
+                    slots:[
+                        {
+                            flex: 1,
+                            values: ['是','否'],
+                            className: 'slot1',
+                            textAlign: 'center'
+                        }
+                    ],
+                    msg:"请选择您是否有车",
+                    car:""
+                },
+                carTypeObj:{
+                    popupVisible:false,
+                    slots:[
+                        {
+                            flex: 1,
+                            values: ['小轿车','中型车','大客车','拖拉机','自行车'],
+                            className: 'slot1',
+                            textAlign: 'center'
+                        }
+                    ],
+                    msg:"请选择您的车型",
+                    carType:""
+                },
+                drivingAge:"",
+                oldCarTypeObj:{
+                    popupVisible:false,
+                    slots:[
+                        {
+                            flex: 1,
+                            values: ['小轿车','中型车','大客车','拖拉机','自行车'],
+                            className: 'slot1',
+                            textAlign: 'center'
+                        }
+                    ],
+                    msg:"请选择您的曾有车型",
+                    oldCarType:""
+                },
+                fileObj:{
+                    drivingLicense:fileimg,
+                    drivingBook:fileimg
                 }
-
             }
         },
         methods: {
@@ -145,11 +229,11 @@
             },
             // 选择 性别 （数据） 
             onSexChange(picker, values){
-                this.sexObj.sex = values;
+                this.sexObj.sex = values[0];
             },
             // 确认选择性别
             sexYes(){
-                this.sexObj.msg = this.sexObj.sex.toString();
+                this.sexObj.msg = this.sexObj.sex;
                 this.sexObj.popupVisible = !this.sexObj.popupVisible;
             },
             // 取消选择性别
@@ -162,13 +246,108 @@
             },
             // 城市切换数据
             onCityChange(picker, values){
-                console.log(myaddress[values[0]]);
                 if(myaddress[values[0]]){
                     picker.setSlotValues(1,Object.keys(myaddress[values[0]]));
                     picker.setSlotValues(2,myaddress[values[0]][values[1]]); 
                 }
+                this.cityObj.optProvince = values[0];
+                this.cityObj.optCity = values[1];
+                this.cityObj.optArea = values[2];
+            },
+            // 确认选择城市
+            cityYes(){
+                this.cityObj.popupVisible = !this.cityObj.popupVisible;
+                this.cityObj.province = this.cityObj.optProvince;
+                this.cityObj.city = this.cityObj.optCity;
+                this.cityObj.area = this.cityObj.optArea;
+            },
+            // 取消选择城市
+            cityNo(){
+                this.cityObj.popupVisible = !this.cityObj.popupVisible;
+            },
+            // 是否有车
+            OptCar(){
+                this.carObj.popupVisible = !this.carObj.popupVisible;
+            },
+            // 是否有车数据切换
+            onCarChange(picker, values){
+                this.carObj.car = values[0];
+            },
+            // 确认选择 车
+            carYes(){
+                this.carObj.msg = this.carObj.car;
+                this.carObj.popupVisible = !this.carObj.popupVisible;
+            },
+            carNo(){
+                this.carObj.popupVisible = !this.carObj.popupVisible;
+            },
+            // 选择 车的类型
+            OptCarType(){
+                this.carTypeObj.popupVisible = !this.carTypeObj.popupVisible;
+            },
+            // 车的类型 数据切换
+            onCarTypeChange(picker, values){
+                this.carTypeObj.carType = values[0];
+            },
+            // 确认选择车类型
+            carTypeNo(){
+                this.carTypeObj.popupVisible = !this.carTypeObj.popupVisible;
+            },
+            carTypeYes(){
+                this.carTypeObj.msg = this.carTypeObj.carType;
+                this.carTypeObj.popupVisible = !this.carTypeObj.popupVisible;
+            },
+            // 曾经拥有的车型
+            carOld(){
+                this.oldCarTypeObj.popupVisible = !this.oldCarTypeObj.popupVisible;
+            },
+            onOldCarTypeChange(picker, values){
+                this.oldCarTypeObj.oldCarType = values[0];
+            },
+            oldCarTypeYes(){
+                this.oldCarTypeObj.msg = this.oldCarTypeObj.oldCarType;
+                this.oldCarTypeObj.popupVisible = !this.oldCarTypeObj.popupVisible;
+            },
+            oldCarTypeNo(){
+                this.oldCarTypeObj.popupVisible = !this.oldCarTypeObj.popupVisible;
+            },
+            // 上传图片
+            fileOne(e){
+                let file = e.target.files[0];
+                let imgSize = file.size/1024;
+                // console.log(file);
+                // console.log(imgSize);
+                if(imgSize > 200){
+                    alert('请上传大小不要超过200KB的图片');
+                }else{
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file); // 读出 base64
+                    reader.onloadend = ()=>{
+                        let dataURL = reader.result;
+                        this.fileObj.drivingLicense = dataURL;
+                        // console.log(dataURL);
+                        // 下面 写 axios 逻辑； 
+                    }
+                }
+            },
+            fileTwo(e){
+                let file = e.target.files[0];
+                let imgSize = file.size/1024;
+                // console.log(file);
+                // console.log(imgSize);
+                if(imgSize > 200){
+                    alert('请上传大小不要超过200KB的图片');
+                }else{
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file); // 读出 base64
+                    reader.onloadend = ()=>{
+                        let dataURL = reader.result;
+                        this.fileObj.drivingBook = dataURL;
+                        // console.log(dataURL);
+                        // 下面 写 axios 逻辑； 
+                    }
+                }
             }
-
         },
         mounted () {
             this.$nextTick(()=>{
@@ -314,7 +493,7 @@
     .info .driving .z_file_label{
         display: block;
         width: 1.4rem;
-        height: 1.4rem;
+        /* height: 1.4rem; */
         float: left;
     }
     .info .driving .filebox span{
