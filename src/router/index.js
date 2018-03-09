@@ -5,6 +5,10 @@ import ForgetPass from '@/components/login/ForgetPass'
 import modifyPass from '@/components/login/modifyPass'
 import register from '@/components/login/register.vue'
 import index from '@/views/index.vue'
+import sayList from '@/views/sayList.vue'
+import zxList from '@/views/zxList.vue'
+import videoList from '@/views/videoList.vue'
+import sayDetail from '@/views/sayDetail.vue'
 
 Vue.use(Router)
 
@@ -40,6 +44,22 @@ export default new Router({
 		{
 			path: '/register',
 			component: register
+		},
+		{
+			path: '/sayList',
+			component: sayList
+		},
+		{
+			path: '/zxList',
+			component: zxList
+		},
+		{
+			path: '/videoList',
+			component:videoList
+		},
+		{
+			path: '/sayDetail',
+			component:sayDetail
 		}
 	]
 })

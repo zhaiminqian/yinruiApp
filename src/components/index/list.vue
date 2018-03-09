@@ -2,14 +2,12 @@
   <div> 
         <div class="car-list">
             <ul class="clearfix">
-                <li v-for="(item,index) in list" :key="index">
-                    <router-link :to="detailLinks">
-                        <img :src="item.img" alt="图片">
-                        <div class="text">
-                            <h3>{{item.title}}</h3>
-                            <p>{{item.describe}}</p>
-                        </div>
-                    </router-link>
+                <li v-for="(item,index) in list" :key="index" @click="linkTo(item.id)">
+                  <img :src="item.img" alt="图片">
+                  <div class="text">
+                      <h3>{{item.title}}</h3>
+                      <p>{{item.describe}}</p>
+                  </div>
                 </li>
             </ul>
         </div>
@@ -20,6 +18,17 @@ export default {
   props: {
     list: Array,        //列表内容
     detailLinks: String //列表详情页链接
+  },
+  methods:{
+    linkTo(id){
+        
+        this.$router.push({
+          path:'sayDetail',
+          query:{
+            id:id
+          }
+        })
+    }
   }
 };
 </script>

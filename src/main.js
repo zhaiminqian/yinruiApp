@@ -13,8 +13,7 @@ import Minit from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(Minit)
 
-// axios
-import axios from 'axios'
+
 
 Vue.config.productionTip = false
 

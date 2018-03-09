@@ -23,7 +23,7 @@
         <list :list='videoList' :detailLinks='detailLink2'></list>
 
         <!-- 公共标题 -->
-        <public-title :link='links.video'>
+        <public-title :link='links.zx'>
             <span slot="title"> 
                 汽车资讯
             </span>
@@ -56,14 +56,14 @@ export default {
 
             //公共标题的跳转链接
             links:{
-                'say':'/login',
+                'say':'/sayList',
                 'video':'/login',
-                'zx':'/login',
+                'zx':'/zxList',
                 'csLink':'/login'
             },
 
             //车主有话说列表详情页链接
-            detailLink:'/login',
+            detailLink:'/sayDetail',
             //车主小视频详情页链接
             detailLink2:'/login',
             //汽车资讯详情页链接
@@ -91,8 +91,20 @@ export default {
         // 车主有话说列表
         axios.get('/static/json/sayList.json')
         .then((response)=>{
-            // console.log(response.data.sayList);
-            this.sayList = response.data.sayList;
+            
+            let list_ = response.data.sayList;
+            let arr_ = [] ;
+
+            list_.forEach((item,index) => {
+                // console.log(item,index);
+                if( index < 4 ){
+                    arr_.push( item );
+                }
+            });
+            console.log(arr_);
+            this.sayList = arr_;
+            // this.sayList = response.data.sayList;
+
         })
         .catch((error)=>{
             console.log(error);
@@ -100,8 +112,15 @@ export default {
         //车主小视频列表
         axios.get('/static/json/videoList.json')
         .then((response)=>{
-            // console.log(response.data.videoList);
-            this.videoList = response.data.videoList;
+
+            let list_1 = response.data.videoList;
+            let arr_1 = [] ;
+            list_1.forEach((item,index)=>{
+                if( index <4 ){
+                    arr_1.push(item)
+                }
+            });
+            this.videoList = arr_1 ;
         })
         .catch((error)=>{
             console.log(error);
@@ -109,8 +128,15 @@ export default {
         //汽车资讯列表
         axios.get('/static/json/zxList.json')
         .then((response)=>{
-            // console.log(response.data.zxList);
-            this.zxList = response.data.zxList;
+
+            let list_2 = response.data.zxList;
+            let arr_2 = [] ;
+            list_2.forEach((item,index)=>{
+                if( index <4 ){
+                    arr_2.push(item)
+                }
+            });
+            this.zxList = arr_2 ;
         })
         .catch((error)=>{
             console.log(error);
