@@ -11,6 +11,7 @@ import zxList from '@/views/zxList.vue'
 import videoList from '@/views/videoList.vue'
 import sayDetail from '@/views/sayDetail.vue'
 
+import tianxie from '@/components/my/tianxie'
 Vue.use(Router)
 
 export default new Router({

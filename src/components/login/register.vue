@@ -316,26 +316,20 @@ input {
 	position: relative;
 	line-height: 0;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 .login li input:focus{
   border-bottom: 1px solid #f6bc0b;
 }
 
-=======
 .login li.active input {
   	border-bottom: 1px solid #f6bc0b;
 }
 .login li.Regactive input {
   	border-bottom: 1px solid #d6000f;
 }
->>>>>>> 9fa2c542ec304f9ee23dc7894990c988c14f2ed9
-=======
 .login li input:focus {
   	border-bottom: 1px solid #f6bc0b;
 }
-
->>>>>>> zmq
 .login .phone::before {
 	position: absolute;
 	content: "";
@@ -416,19 +410,11 @@ input {
 	color: #73757a;
 }
 .m-reg .prompt {
-<<<<<<< HEAD
   font-size: 0.24rem;
   color: #f6bc0b;
   display: inline-block;
   position: absolute;
   bottom: -0.24rem;
-=======
-	font-size: 0.24rem;
-	color: #f6bc0b;
-	display: inline-block;
-	position: absolute;
-	bottom: -0.24rem;
->>>>>>> 9fa2c542ec304f9ee23dc7894990c988c14f2ed9
 }
 .m-reg {
   	top: 26%;

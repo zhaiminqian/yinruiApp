@@ -6,7 +6,7 @@ import router from './router'
 //layer弹窗
 // import 'vue-layer-mobile/need/layer.css'
 // import layer from 'vue-layer-mobile'
-Vue.use(layer)
+// Vue.use(layer)
 
 //MinitUi
 import Minit from 'mint-ui'
@@ -19,8 +19,8 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
 })
