@@ -23,7 +23,7 @@ export default {
     linkTo(id){
         
         this.$router.push({
-          path:'sayDetail',
+          path:this.detailLinks, //详情页链接
           query:{
             id:id
           }

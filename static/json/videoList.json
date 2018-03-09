@@ -25,14 +25,18 @@
         "img":"static/images/car1.png",
         "title":"这车的性价比简直了！",
         "describe":"开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象",
-        "playTime":"123456"
+        "playTime":"156",
+        "video":"http://220.194.121.24/variety.tc.qq.com/Ak-W7cRCJsG1YKw-i-nXCh2YSWeDYObnb_iU1qkNpTc4/p0200xmlvvy.p201.1.mp4?vkey=5E8AE0AEC8CB8956B42E4D12B2D63382B608EDF95F9D26C0B6B9865617860E0B3C4F5A21D48E9F7048613704F0703BB7A059F3EED57BF4707738EC061E26C391EE7045104627BB8DA4705927663C55A792B3433EBEAE696D10F423F22078DAE831CBA3DB110D79DF69E0A2AAC2D3BFD8FD0008D1BFA39F14&platform=10201&sdtfrom=&fmt=shd&level=0"
+
     },
     {
         "id":2,
         "img":"static/images/car2.png",
         "title":"2018北京车展",
         "describe":"哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣",       
-        "playTime":"123456"
+        "playTime":"1456",
+        "video":"http://220.194.121.24/variety.tc.qq.com/Ak-W7cRCJsG1YKw-i-nXCh2YSWeDYObnb_iU1qkNpTc4/p0200xmlvvy.p201.1.mp4?vkey=5E8AE0AEC8CB8956B42E4D12B2D63382B608EDF95F9D26C0B6B9865617860E0B3C4F5A21D48E9F7048613704F0703BB7A059F3EED57BF4707738EC061E26C391EE7045104627BB8DA4705927663C55A792B3433EBEAE696D10F423F22078DAE831CBA3DB110D79DF69E0A2AAC2D3BFD8FD0008D1BFA39F14&platform=10201&sdtfrom=&fmt=shd&level=0"
+
 
     },
     {
@@ -40,28 +44,36 @@
         "img":"static/images/car3.png",
         "title":"大块头有大智慧",
         "describe":"道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡",
-        "playTime":"123456"
+        "playTime":"56",
+        "video":"http://220.194.121.24/variety.tc.qq.com/Ak-W7cRCJsG1YKw-i-nXCh2YSWeDYObnb_iU1qkNpTc4/p0200xmlvvy.p201.1.mp4?vkey=5E8AE0AEC8CB8956B42E4D12B2D63382B608EDF95F9D26C0B6B9865617860E0B3C4F5A21D48E9F7048613704F0703BB7A059F3EED57BF4707738EC061E26C391EE7045104627BB8DA4705927663C55A792B3433EBEAE696D10F423F22078DAE831CBA3DB110D79DF69E0A2AAC2D3BFD8FD0008D1BFA39F14&platform=10201&sdtfrom=&fmt=shd&level=0"
+
     },
     {
         "id":4,
         "img":"static/images/car4.png",
         "title":"奥迪TT新款上市",
         "describe":"开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象",
-        "playTime":"123456"
+        "playTime":"456",
+        "video":"http://220.194.121.24/variety.tc.qq.com/Ak-W7cRCJsG1YKw-i-nXCh2YSWeDYObnb_iU1qkNpTc4/p0200xmlvvy.p201.1.mp4?vkey=5E8AE0AEC8CB8956B42E4D12B2D63382B608EDF95F9D26C0B6B9865617860E0B3C4F5A21D48E9F7048613704F0703BB7A059F3EED57BF4707738EC061E26C391EE7045104627BB8DA4705927663C55A792B3433EBEAE696D10F423F22078DAE831CBA3DB110D79DF69E0A2AAC2D3BFD8FD0008D1BFA39F14&platform=10201&sdtfrom=&fmt=shd&level=0"
+
     },
     {
         "id":5,
         "img":"static/images/car1.png",
         "title":"这车的性价比简直了！",
         "describe":"开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象",
-        "playTime":"123456"
+        "playTime":"123456",
+        "video":"http://220.194.121.24/variety.tc.qq.com/Ak-W7cRCJsG1YKw-i-nXCh2YSWeDYObnb_iU1qkNpTc4/p0200xmlvvy.p201.1.mp4?vkey=5E8AE0AEC8CB8956B42E4D12B2D63382B608EDF95F9D26C0B6B9865617860E0B3C4F5A21D48E9F7048613704F0703BB7A059F3EED57BF4707738EC061E26C391EE7045104627BB8DA4705927663C55A792B3433EBEAE696D10F423F22078DAE831CBA3DB110D79DF69E0A2AAC2D3BFD8FD0008D1BFA39F14&platform=10201&sdtfrom=&fmt=shd&level=0"
+
     },
     {
         "id":6,
         "img":"static/images/car2.png",
         "title":"2018北京车展",
         "describe":"哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣哪个展位车模最辣",       
-        "playTime":"123456"
+        "playTime":"132",
+        "video":"http://220.194.121.24/variety.tc.qq.com/Ak-W7cRCJsG1YKw-i-nXCh2YSWeDYObnb_iU1qkNpTc4/p0200xmlvvy.p201.1.mp4?vkey=5E8AE0AEC8CB8956B42E4D12B2D63382B608EDF95F9D26C0B6B9865617860E0B3C4F5A21D48E9F7048613704F0703BB7A059F3EED57BF4707738EC061E26C391EE7045104627BB8DA4705927663C55A792B3433EBEAE696D10F423F22078DAE831CBA3DB110D79DF69E0A2AAC2D3BFD8FD0008D1BFA39F14&platform=10201&sdtfrom=&fmt=shd&level=0"
+
 
     },
     {
@@ -69,14 +81,18 @@
         "img":"static/images/car3.png",
         "title":"大块头有大智慧",
         "describe":"道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡道奇公羊新款皮卡",
-        "playTime":"123456"
+        "playTime":"123456",
+        "video":"http://220.194.121.24/variety.tc.qq.com/Ak-W7cRCJsG1YKw-i-nXCh2YSWeDYObnb_iU1qkNpTc4/p0200xmlvvy.p201.1.mp4?vkey=5E8AE0AEC8CB8956B42E4D12B2D63382B608EDF95F9D26C0B6B9865617860E0B3C4F5A21D48E9F7048613704F0703BB7A059F3EED57BF4707738EC061E26C391EE7045104627BB8DA4705927663C55A792B3433EBEAE696D10F423F22078DAE831CBA3DB110D79DF69E0A2AAC2D3BFD8FD0008D1BFA39F14&platform=10201&sdtfrom=&fmt=shd&level=0"
+
     },
     {
         "id":8,
         "img":"static/images/car4.png",
         "title":"奥迪TT新款上市",
         "describe":"开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象开着讴歌MDX的期间有个现象",
-        "playTime":"123456"
+        "playTime":"12",
+        "video":"http://220.194.121.24/variety.tc.qq.com/Ak-W7cRCJsG1YKw-i-nXCh2YSWeDYObnb_iU1qkNpTc4/p0200xmlvvy.p201.1.mp4?vkey=5E8AE0AEC8CB8956B42E4D12B2D63382B608EDF95F9D26C0B6B9865617860E0B3C4F5A21D48E9F7048613704F0703BB7A059F3EED57BF4707738EC061E26C391EE7045104627BB8DA4705927663C55A792B3433EBEAE696D10F423F22078DAE831CBA3DB110D79DF69E0A2AAC2D3BFD8FD0008D1BFA39F14&platform=10201&sdtfrom=&fmt=shd&level=0"
+
     }
    ]
 }

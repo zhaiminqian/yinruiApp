@@ -1,18 +1,8 @@
 <template>
     <div>
-        <public-detail :listcontent='listsa'></public-detail>
+        <public-detail :listcontent='listsb'></public-detail>
         <!-- 选集 -->
-        <div class="anthology">
-            <h3>选集</h3>
-            <div class="film">
-                <ul>
-                    <li v-for="(item,index) in sayList" :key="index">
-                        <img :src="item.img" :alt="item.title">
-                        <p>{{item.title}}</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        
     </div>
 </template>
 <script>
@@ -21,8 +11,8 @@ import publicDetail from '@/components/detail/publicDetail.vue'
 export default {
     data(){
         return {
-            listsa:{},    //当前数据的相关内容
-            sayList:[]  //所有数据
+            listsb:{},    //当前数据的相关内容
+            videoList:[]  //所有数据
         }
         
     },
@@ -31,20 +21,16 @@ export default {
         link(){
             // console.log(this.$route.query.id);
             let id = this.$route.query.id; //传过来的id
-            axios.get('/static/json/sayList.json')
+            axios.get('/static/json/videoList.json')
             .then((response)=>{
                 console.log(response);
-                // this.sayList = response.data.sayList;
+                // this.videoList = response.data.videoList;
                 let arr = [] ;
-                let data = response.data.sayList;
+                let data = response.data.videoList;
                 data.forEach((item,index) => {
                     console.log(item.id);
                     if( item.id == id ){
-                        this.listsa = item ;
-                    }
-                    if( index < 5 ){
-                        arr.push(item);
-                        this.sayList = arr;
+                        this.listsb = item ;
                     }
                 });
             })
@@ -165,58 +151,7 @@ export default {
     background: url(/static/images/collectioniconAc.png) no-repeat center;
     background-size: cover;
 }
-.anthology{
-    background: #fff;
-    padding: 0.3rem 0.22rem 0; 
-    overflow: hidden;
-}
-.anthology h3{
-    font-size: 0.28rem;
-    color: #333333;
-}
-.anthology .film::before{
-    content: "";
-    display: block;
-    clear: both;
-    height: 0;
-}
-.anthology .film::after{
-    content: "";
-    display: block;
-    clear: both;
-    height: 0;
-}
-.anthology .film{
-    margin-top: 0.3rem;
-    border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 0.1rem;
-    overflow-x: auto;
-    width: 100%;
-}
-.anthology .film ul{
-    overflow-y: hidden;
-    width: 11.5rem;
-    height: 1.8rem;
-}
-.anthology li{
-    width: 2.2rem;
-    float: left;
-    margin-right: 0.1rem;
-}
-.anthology li img{
-    display: block;
-    width: 2.2rem;
-    height: 1.2rem;
-}
-.anthology li p{
-    font-size: 0.24rem;
-    height: 0.5rem;
-    color: #333333;
-    margin-top: 0.15rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
+
 </style>
 
 

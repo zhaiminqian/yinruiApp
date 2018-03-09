@@ -2,17 +2,13 @@
   <div> 
         <div class="meaasge-list">
             <ul>
-                <li class="clearfix" v-for="(item,index) in zxlist" :key="index">
+                <li class="clearfix" v-for="(item,index) in zxlist" :key="index" @click="linkTo(item.id)">
                     <div class="img">
-                        <router-link :to='zxdetailLinks'>
-                            <img :src="item.img" alt="图片">
-                        </router-link>
+                        <img :src="item.img" alt="图片">
                     </div>
                     <div class="text">
                         <h3>
-                            <router-link :to='zxdetailLinks'>
-                                {{item.title}}
-                            </router-link>
+                          {{item.title}}
                         </h3>
                         <p>
                             <span class="date">{{item.date}}</span>
@@ -28,6 +24,16 @@ export default {
   props: {
     zxlist: Array,        //列表内容
     zxdetailLinks: String //列表详情页链接
+  },
+  methods:{
+    linkTo(id){
+      this.$router.push({
+        path:this.zxdetailLinks,
+        query:{
+          id:id
+        }
+      })
+    }
   }
 };
 </script>

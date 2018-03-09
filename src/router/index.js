@@ -9,6 +9,8 @@ import sayList from '@/views/sayList.vue'
 import zxList from '@/views/zxList.vue'
 import videoList from '@/views/videoList.vue'
 import sayDetail from '@/views/sayDetail.vue'
+import videoDetail from '@/views/videoDetail.vue'
+import zxDetail from '@/views/zxDetail.vue'
 
 Vue.use(Router)
 
@@ -60,6 +62,14 @@ export default new Router({
 		{
 			path: '/sayDetail',
 			component:sayDetail
+		},
+		{
+			path: '/videoDetail',
+			component:videoDetail
+		},
+		{
+			path: '/zxDetail',
+			component:zxDetail
 		}
 	]
 })

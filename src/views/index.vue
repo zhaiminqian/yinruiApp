@@ -65,9 +65,9 @@ export default {
             //车主有话说列表详情页链接
             detailLink:'/sayDetail',
             //车主小视频详情页链接
-            detailLink2:'/login',
+            detailLink2:'/videoDetail',
             //汽车资讯详情页链接
-            zxdetailLink:'/login',
+            zxdetailLink:'/zxDetail',
 
             //车主有话说列表
             sayList:[],

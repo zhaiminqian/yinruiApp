@@ -1,63 +1,41 @@
 <template>
     <div>
-        <public-detail :listcontent='listsa'></public-detail>
-        <!-- 选集 -->
-        <div class="anthology">
-            <h3>选集</h3>
-            <div class="film">
-                <ul>
-                    <li v-for="(item,index) in sayList" :key="index">
-                        <img :src="item.img" :alt="item.title">
-                        <p>{{item.title}}</p>
-                    </li>
-                </ul>
+        <!-- 视频播放器 -->
+        <div class="playvideo">
+            <a href="javascript:;" class="go" @click="ReturnGo"></a>
+            <div class="zy_media">
+                <video :src="listcontent.video" autoplay='true' id="videoplay" controls='true'>
+                    您的浏览器不支持HTML5视频
+                </video>
+            </div>
+            
+        </div>
+
+        <!-- 页面内容 -->
+        <div class="video">
+            <h3>{{listcontent.title}}</h3>
+            <strong>播放量：{{listcontent.playTime}} 次播放</strong>
+            <p>{{listcontent.describe}}</p>
+            <div class="icon">
+                <a href="javascript:;" class="fabulous"></a>
+                <a href="javascript:;" class="collection"></a>
             </div>
         </div>
     </div>
 </template>
 <script>
 import axios from 'axios';
-import publicDetail from '@/components/detail/publicDetail.vue'
 export default {
-    data(){
-        return {
-            listsa:{},    //当前数据的相关内容
-            sayList:[]  //所有数据
-        }
-        
+    props:{
+        listcontent:{},    //当前数据的相关内容
     },
     methods: {
-        //获取到传过来的query值
-        link(){
-            // console.log(this.$route.query.id);
-            let id = this.$route.query.id; //传过来的id
-            axios.get('/static/json/sayList.json')
-            .then((response)=>{
-                console.log(response);
-                // this.sayList = response.data.sayList;
-                let arr = [] ;
-                let data = response.data.sayList;
-                data.forEach((item,index) => {
-                    console.log(item.id);
-                    if( item.id == id ){
-                        this.listsa = item ;
-                    }
-                    if( index < 5 ){
-                        arr.push(item);
-                        this.sayList = arr;
-                    }
-                });
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
+        ReturnGo(){
+            this.$router.go(-1);
         }
     },
     mounted(){
-       this.link()
-    },
-    components:{
-        publicDetail
+        
     }
 };
 </script>
