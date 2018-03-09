@@ -4,12 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 //layer弹窗
-// import 'vue-layer-mobile/need/layer.css'
-// import layer from 'vue-layer-mobile'
-// Vue.use(layer)
-import Mint from 'mint-ui';
+import 'vue-layer-mobile/need/layer.css'
+import layer from 'vue-layer-mobile'
+Vue.use(layer)
+
+//MinitUi
+import Minit from 'mint-ui'
 import 'mint-ui/lib/style.css'
-Vue.use(Mint);
+Vue.use(Minit)
+
+
 
 Vue.config.productionTip = false
 
