@@ -8,6 +8,11 @@ import index from '@/views/index.vue'
 import info from '@/components/my/info'
 import edit from '@/components/my/edit'
 import playVideo from '@/components/owner/playVideo'
+import sayList from '@/views/sayList.vue'
+import zxList from '@/views/zxList.vue'
+import videoList from '@/views/videoList.vue'
+import sayDetail from '@/views/sayDetail.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -49,6 +54,23 @@ export default new Router({
 		{
 			path: '/playVideo',
 			component: playVideo
+			
+		},
+		{
+			path: '/sayList',
+			component: sayList
+		},
+		{
+			path: '/zxList',
+			component: zxList
+		},
+		{
+			path: '/videoList',
+			component:videoList
+		},
+		{
+			path: '/sayDetail',
+			component:sayDetail
 		}
 	]
 })

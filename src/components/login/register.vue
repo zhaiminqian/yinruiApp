@@ -316,19 +316,20 @@ input {
 	position: relative;
 	line-height: 0;
 }
-<<<<<<< HEAD
+
 .login li input:focus{
   border-bottom: 1px solid #f6bc0b;
 }
 
-=======
 .login li.active input {
   	border-bottom: 1px solid #f6bc0b;
 }
 .login li.Regactive input {
   	border-bottom: 1px solid #d6000f;
 }
->>>>>>> 9fa2c542ec304f9ee23dc7894990c988c14f2ed9
+.login li input:focus {
+  	border-bottom: 1px solid #f6bc0b;
+}
 .login .phone::before {
 	position: absolute;
 	content: "";
