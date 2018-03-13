@@ -2,6 +2,7 @@
     <header class="title-top">
         <a href="javascript:;" class="go" @click="ReturnGo"></a>
         <slot name='title'></slot>
+        <slot name='ok'></slot>
     </header>
 </template>
 <script>
@@ -37,5 +38,21 @@
         background-size: 0.2rem 0.36rem;
         position: absolute;
         left: 0.22rem;
+    }
+    .title-top a.ok{
+        position: absolute;
+        right: 0.22rem;
+        font-size: 0.24rem;
+        color: #b5b5b5;
+        border: 1px solid #e5e5e5;
+        padding: 0.09rem 0.25rem;
+        border-radius: 3px;
+        line-height: initial;
+        top: 0.18rem;
+    }
+    .title-top a.active{
+        color: #fff;
+        background: #f6b900;
+        border: 1px solid #f6b900;
     }
 </style>

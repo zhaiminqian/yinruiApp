@@ -39,7 +39,7 @@ export default {
 	}
 	input{
 		-webkit-appearance:none;
-		outline:none
+		outline:none;
 	}
 	main, article, aside, figure, footer, header, nav, section, details, summary {display: block;}
 
@@ -201,5 +201,10 @@ export default {
 		line-height:0;
 		font-size:0;
 	}
-
+	.video-js .vjs-big-play-button{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
 </style>

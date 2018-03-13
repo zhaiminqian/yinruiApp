@@ -25,7 +25,7 @@
                     <p><span class="type">车型：</span><span @click="OptCarType" class="text">{{carTypeObj.msg}}</span><a href="javascript:;" class="openNext"></a></p>
                 </li>
                 <li class="marginTop">
-                    <p><span class="type">驾龄：</span><span class="text"><input type="text" placeholder="请输入您的驾龄" v-model="drivingAge"></span></p>
+                    <p><span class="type">驾龄：</span><span class="text"><input type="text" placeholder="请输入您的驾龄（只需填写数字即可）" v-model="drivingAge"></span></p>
                 </li>
                 <li id="carYearBtn">
                     <p><span class="type">曾有车型：</span><span @click="carOld"  class="text">{{oldCarTypeObj.msg}}</span><a href="javascript:;" class="openNext"></a></p>
@@ -108,12 +108,13 @@
             </div>
             <!-- 保存 -->
             <div class="confirm">
-                <a href="javascript:;">确认</a>
+                <a href="javascript:;" @click="SubData">确认</a>
             </div>
         </div>
     </div>
 </template>
 <script>
+    import { Toast } from 'mint-ui';
     import LoginHeader from '@/components/login/LoginHeader.vue'
     import myaddress from './city.json'
     import fileimg from '../../assets/images/fileimg.png';
@@ -208,7 +209,7 @@
                     slots:[
                         {
                             flex: 1,
-                            values: ['小轿车','中型车','大客车','拖拉机','自行车'],
+                            values: ['无车','小轿车','中型车','大客车','拖拉机','自行车'],
                             className: 'slot1',
                             textAlign: 'center'
                         }
@@ -277,6 +278,9 @@
             carYes(){
                 this.carObj.msg = this.carObj.car;
                 this.carObj.popupVisible = !this.carObj.popupVisible;
+                if(this.carObj.msg == "否"){
+                    this.carTypeObj.msg = "无车";
+                }
             },
             carNo(){
                 this.carObj.popupVisible = !this.carObj.popupVisible;
@@ -326,6 +330,7 @@
                         let dataURL = reader.result;
                         this.fileObj.drivingLicense = dataURL;
                         // console.log(dataURL);
+
                         // 下面 写 axios 逻辑； 
                     }
                 }
@@ -345,6 +350,33 @@
                         this.fileObj.drivingBook = dataURL;
                         // console.log(dataURL);
                         // 下面 写 axios 逻辑； 
+                    }
+                }
+            },
+            SubData(){
+                if(this.userNickName != "" && this.sexObj.msg != "请选择您的性别" && this.userName != "" && this.cityObj.province != "省" && this.carObj.msg != "请选择您是否有车" && this.carTypeObj.msg != "请选择您的车型" && this.drivingAge != "" && this.oldCarTypeObj.msg != "请选择您的曾有车型" && this.fileObj.drivingLicense != fileimg && this.fileObj.drivingBook != fileimg){
+                    alert('全部填写好了')
+                }else{
+                    if(this.userNickName == ""){
+                        Toast("请输入您的昵称");
+                    }else if(this.sexObj.msg == "请选择您的性别"){
+                        Toast("请选择您的性别");
+                    }else if(this.userName == ""){
+                        Toast("请输入您的姓名");
+                    }else if(this.cityObj.province == "省"){
+                        Toast("请输入您的所在地");
+                    }else if(this.carObj.msg == "请选择您是否有车"){
+                        Toast("请选择您是否有车");
+                    }else if(this.carTypeObj.msg == "请选择您的车型"){
+                        Toast("请选择您的车型");
+                    }else if(this.drivingAge == ""){
+                        Toast("请输入您的驾龄");
+                    }else if(this.oldCarTypeObj.msg == "请选择您的曾有车型"){
+                        Toast("请选择您的曾有车型");
+                    }else if(this.fileObj.drivingLicense == fileimg){
+                        Toast("请上传您的驾照");
+                    }else if(this.fileObj.drivingBook == fileimg){
+                        Toast("请上传您的行使本");
                     }
                 }
             }

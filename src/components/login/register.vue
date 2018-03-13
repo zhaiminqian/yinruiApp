@@ -57,24 +57,24 @@ export default {
 			},
 			msg: {
 				name: {
-				prompt: "",
-				isActive: false
+					prompt: "",
+					isActive: false
 				},
 				phone: {
-				prompt: "",
-				isActive: false
+					prompt: "",
+					isActive: false
 				},
 				pass: {
-				prompt: "",
-				isActive: false
+					prompt: "",
+					isActive: false
 				},
 				passTwo: {
-				prompt: "",
-				isActive: false
+					prompt: "",
+					isActive: false
 				},
 				smsCode: {
-				prompt: "",
-				isActive: false
+					prompt: "",
+					isActive: false
 				}
 			},
 			//倒计时
@@ -235,9 +235,9 @@ export default {
 				this.SetTime();
 			} else {
 				this.$layer.toast({
-				icon: "icon-check",
-				content: "请输入正确的手机号",
-				time: 2000
+					icon: "icon-check",
+					content: "请输入正确的手机号",
+					time: 2000
 				});
 				this.dataTime.disabled = false;
 			}

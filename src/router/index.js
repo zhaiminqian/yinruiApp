@@ -6,7 +6,8 @@ import modifyPass from '@/components/login/modifyPass'
 import register from '@/components/login/register.vue'
 import index from '@/views/index.vue'
 import info from '@/components/my/info'
-import tianxie from '@/components/my/tianxie'
+import edit from '@/components/my/edit'
+import playVideo from '@/components/owner/playVideo'
 Vue.use(Router)
 
 export default new Router({
@@ -40,6 +41,14 @@ export default new Router({
 		{
 			path: '/info',
 			component: info
+		},
+		{
+			path: '/edit',
+			component: edit
+		},
+		{
+			path: '/playVideo',
+			component: playVideo
 		}
 	]
 })
