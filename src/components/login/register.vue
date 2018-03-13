@@ -409,19 +409,11 @@ input {
 	color: #73757a;
 }
 .m-reg .prompt {
-<<<<<<< HEAD
-  font-size: 0.24rem;
-  color: #f6bc0b;
-  display: inline-block;
-  position: absolute;
-  bottom: -0.24rem;
-=======
 	font-size: 0.24rem;
 	color: #d6000f;
 	display: inline-block;
 	position: absolute;
 	bottom: -0.24rem;
->>>>>>> 9fa2c542ec304f9ee23dc7894990c988c14f2ed9
 }
 .m-reg {
   	top: 26%;
