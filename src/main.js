@@ -9,7 +9,6 @@ import 'mint-ui/lib/style.css'
 Vue.use(Mint)
 
 
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -18,4 +17,7 @@ new Vue({
     router,
     components: { App },
     template: '<App/>'
+})
+router.beforeEach((to, from, next) => {
+	next();
 })

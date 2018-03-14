@@ -8,11 +8,6 @@
     import LoginHeader from '@/components/login/LoginHeader.vue'
     import LoginIn from '@/components/login/LoginIn.vue'
     export default {
-        data () {
-            return {
-                
-            }
-        },
         components: {
             LoginHeader,
             LoginIn,

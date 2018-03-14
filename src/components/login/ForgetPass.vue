@@ -29,6 +29,7 @@
     </div>
 </template>
 <script>
+    import { Toast } from 'mint-ui';
     import LoginHeader from '@/components/login/LoginHeader.vue'
     export default {
         data () {
@@ -58,9 +59,9 @@
                     this.SetTime(this.dataTime);
                 }else{
                     if(this.forget.phone == ""){
-                        alert('手机号不能为空');
+                        Toast('手机号不能为空');
                     }else if(!Cell_phone_reg(this.forget.phone)){
-                        alert('手机号格式不正确');
+                        Toast('手机号格式不正确');
                     }
                 }
             },
@@ -72,11 +73,11 @@
                     this.forgetPassBoxActive.two = true;
                 }else{
                     if(this.forget.phone == ""){
-                        alert('手机号不能为空');
+                        Toast('手机号不能为空');
                     }else if(!Cell_phone_reg(this.forget.phone)){
-                        alert('手机号格式不正确');
+                        Toast('手机号格式不正确');
                     }else if(this.forget.phoneCode == ""){
-                        alert('请输入短信验证码');
+                        Toast('请输入短信验证码');
                     }
                 }
             },
@@ -84,14 +85,16 @@
             LoginIn(){
                 if(this.newPass.pass != "" && this.Strong_password_reg(this.newPass.pass) && this.newPass.passTwo == this.newPass.pass){
                     // ajax
-
+                    // 请求数据 
+                    this.setCookie("loginState",1,2000);
+                    this.$router.push('/index');
                 }else{
                     if(this.newPass.pass == ""){
-                        alert('请输入密码');
+                        Toast('请输入密码');
                     }else if(!this.Strong_password_reg(this.newPass.pass)){
-                        alert('密码格式不正确');
+                        Toast('密码格式不正确');
                     }else if(this.newPass.passTwo != this.newPass.pass){
-                        alert('俩次密码输入不正确');
+                        Toast('俩次密码输入不正确');
                     }
                 }
             },
@@ -131,6 +134,11 @@
                     return reg.test(value);
                 }
             },
+            setCookie(name,value,iday){
+                let odate=new Date();
+                odate.setDate(odate.getDate()+iday);
+                document.cookie=name+"="+value+";expires="+odate;
+            }
         },
         components: {
             LoginHeader

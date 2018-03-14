@@ -23,7 +23,10 @@ export default {
 </script>
 <style scoped >
 /*search*/
-
+input{
+    background: none;
+    border: none;
+}
 .wrapper .search {
   padding: 0.12rem 0.22rem;
   height: 0.88rem;

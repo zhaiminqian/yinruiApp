@@ -208,4 +208,9 @@ export default {
         top: 50%;
         transform: translate(-50%,-50%);
     }
+	.common-width {
+		max-width: 750px;
+		margin: 0 auto;
+		padding: 0 .22rem;
+	}
 </style>

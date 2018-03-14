@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import login from '@/views/login'
+import roleSelection from '@/components/login/roleSelection'
+
 import ForgetPass from '@/components/login/ForgetPass'
 import modifyPass from '@/components/login/modifyPass'
 import register from '@/components/login/register.vue'
@@ -19,15 +22,20 @@ export default new Router({
 	mode:'history',
 	routes: [
 		{
-			path:'/',
-			name:'index',
-			component:index
-		},
-		{
-			path: '/login',
+			path: '/',
 			name: 'login',
 			component: login
 		},
+		{
+			path: '/roleSelection',
+			component: roleSelection
+		},
+		{
+			path:'/index',
+			name:'index',
+			component:index
+		},
+		
 		{
 			path: '/ForgetPass',
 			name: 'ForgetPass',
