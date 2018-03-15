@@ -4,7 +4,7 @@
           <span slot="title">车主有话说</span>
       </LoginHeader>
 
-      <list :list='sayList0' :detailLinks='detailLink' class="list"></list>
+      <!-- <list :list='sayList0' :detailLinks='detailLink' class="list"></list> -->
 
   </div>
 </template>
@@ -12,7 +12,7 @@
 // axios
 import axios from 'axios'
 import LoginHeader from '@/components/login/LoginHeader.vue'
-import list from '@/components/index/list.vue'
+//import list from '@/components/index/list.vue'
 
 
 export default {
@@ -35,7 +35,7 @@ export default {
     },
     components:{
         LoginHeader,
-        list
+        // list
     }
 }
 </script>
