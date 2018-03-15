@@ -4,7 +4,7 @@
           <span slot="title">汽车资讯</span>
       </LoginHeader>
 
-      <list2 :zxlist='zxlist0' :zxdetailLinks='zxdetailLinks0' class="list"></list2>
+      <!-- <list2 :zxlist='zxlist0' :zxdetailLinks='zxdetailLinks0' class="list"></list2> -->
 
   </div>
 </template>
@@ -12,7 +12,7 @@
 // axios
 import axios from 'axios'
 import LoginHeader from '@/components/login/LoginHeader.vue'
-import list2 from '@/components/index/list2.vue'
+// import list2 from '@/components/index/list2.vue'
 
 
 export default {
@@ -34,7 +34,7 @@ export default {
     },
     components:{
         LoginHeader,
-        list2
+        // list2
     }
 }
 </script>
