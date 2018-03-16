@@ -16,7 +16,6 @@
                 </li>
                 <li class="regText">
                     <p>还没有帐号？<router-link to='/register'>立即注册</router-link></p>
-                    
                 </li>
             </ul>
         </div>
@@ -26,6 +25,7 @@
     </div> 
 </template>
 <script>
+    import { Toast } from 'mint-ui';
     export default {
         data () {
             return {
@@ -37,7 +37,6 @@
                     one:true,
                     two:false
                 }
-
             }
         },
         methods: {
@@ -55,17 +54,35 @@
             LoginBtn(){
                 if(this.loginIn.phone != "" && this.Cell_phone_reg(this.loginIn.phone) && this.loginIn.pass != "" && this.Strong_password_reg(this.loginIn.pass)){
                     // 请求数据 
+                    this.setCookie("loginState",1,2000);
+                    this.$router.push('/roleSelection');    
                 }else{
                     if(this.loginIn.phone == ""){
-                        alert('手机号不能为空');
+                        Toast('手机号不能为空');
                     }else if(!this.Cell_phone_reg(this.loginIn.phone)){
-                        alert('手机号格式不正确');
+                        Toast('手机号格式不正确');
                     }else if(this.loginIn.pass == ""){
-                        alert('密码不能为空');
+                        Toast('密码不能为空');
                     }else if(!this.Strong_password_reg(this.loginIn.pass)){
-                        alert('密码格式不正确');
+                        Toast('密码格式不正确');
                     }
                 }
+            },
+            setCookie(name,value,iday){
+                let odate=new Date();
+                odate.setDate(odate.getDate()+iday);
+                document.cookie=name+"="+value+";expires="+odate;
+            },
+            getCookie(name){
+                let cookies=document.cookie;
+                let arr1=cookies.split("; ");
+                for (let i=0;i<arr1.length;i++){
+                    let arr2=arr1[i].split("=")
+                    if(name==arr2[0]){
+                        return arr2[1];
+                    }
+                }
+                return false;
             },
             // 手机号验证
             Cell_phone_reg(value){
@@ -85,10 +102,16 @@
                     return reg.test(value);
                 }
             },
-            // 注册
-            SwitchReg(){
-
+            // 登录状态函数
+            loginState(){
+                if(this.getCookie("loginState") == 1){
+                   this.$router.push('/index');
+                }
             }
+        },
+        mounted () {
+            // 判断登录状态
+            this.loginState();
         }
     }
 </script>

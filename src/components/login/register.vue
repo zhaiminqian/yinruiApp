@@ -9,7 +9,7 @@
 		</div>
 		<div class="login m-reg">
 			<ul>
-				<li class="name Regactive">
+				<li class="name">
 					<input type="text" id="Name" placeholder="请输入您的昵称" v-model="info.name" @blur="nameB" :class="{active:msg.name.isActive}">
 					<span class="prompt">{{msg.name.prompt}}</span>
 				</li>
@@ -35,7 +35,7 @@
 				</li>
 				<li class="regText">
 					<p>还没有帐号？
-						<router-link to='/login'>立即登录</router-link>
+						<router-link to='/'>立即登录</router-link>
 					</p>
 				</li>
 			</ul>
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
 import LoginHeader from "@/components/login/LoginHeader";
 export default {
   	data() {
@@ -57,24 +58,24 @@ export default {
 			},
 			msg: {
 				name: {
-				prompt: "",
-				isActive: false
+					prompt: "",
+					isActive: false
 				},
 				phone: {
-				prompt: "",
-				isActive: false
+					prompt: "",
+					isActive: false
 				},
 				pass: {
-				prompt: "",
-				isActive: false
+					prompt: "",
+					isActive: false
 				},
 				passTwo: {
-				prompt: "",
-				isActive: false
+					prompt: "",
+					isActive: false
 				},
 				smsCode: {
-				prompt: "",
-				isActive: false
+					prompt: "",
+					isActive: false
 				}
 			},
 			//倒计时
@@ -111,59 +112,24 @@ export default {
 			//密码正则
 			let regPass = /^(?=.*\d)(?=.*[a-zA-Z]).{6,16}$/;
 			if (this.info.name == "") {
-				this.$layer.toast({
-					icon: "icon-check",
-					content: "请输入您的昵称",
-					time: 2000
-				});
+				Toast("请输入您的昵称");
 			} else if (this.info.RegPhone == "") {
-				this.$layer.toast({
-					icon: "icon-check",
-					content: "请输入您的手机号",
-					time: 2000
-				});
+				Toast("请输入您的手机号");
 			} else if (!regPhone.test(this.info.RegPhone)) {
-				this.$layer.toast({
-					icon: "icon-check",
-					content: "手机号格式不正确",
-					time: 2000
-				});
+				Toast("手机号格式不正确");
 			} else if (this.info.RegPass == "") {
-				this.$layer.toast({
-					icon: "icon-check",
-					content: "请输入密码",
-					time: 2000
-				});
+				Toast("请输入密码");
 			} else if (!regPass.test(this.info.RegPass)) {
-				this.$layer.toast({
-					icon: "icon-check",
-					content: "密码格式不正确",
-					time: 2000
-				});
+				Toast("密码格式不正确");
 			} else if (this.info.RegPassTwo == "") {
-				this.$layer.toast({
-					icon: "icon-check",
-					content: "请再次输入密码",
-					time: 2000
-				});
+				Toast("请再次输入密码");
 			} else if (this.info.RegPass != this.info.RegPassTwo) {
-				this.$layer.toast({
-					icon: "icon-check",
-					content: "两次密码不一致",
-					time: 2000
-				});
+				Toast("两次密码不一致");
 			} else if (this.info.smsCode == "") {
-				this.$layer.toast({
-					icon: "icon-check",
-					content: "请输入短信验证码",
-					time: 2000
-				});
+				Toast("请输入短信验证码");
 			} else {
-				this.$layer.toast({
-				icon: "icon-check",
-				content: "注册成功！",
-				time: 2000
-				});
+				Toast("注册成功！");
+				this.$router.push('/');
 			}
     	},
 		//表单失去焦点
@@ -235,9 +201,9 @@ export default {
 				this.SetTime();
 			} else {
 				this.$layer.toast({
-				icon: "icon-check",
-				content: "请输入正确的手机号",
-				time: 2000
+					icon: "icon-check",
+					content: "请输入正确的手机号",
+					time: 2000
 				});
 				this.dataTime.disabled = false;
 			}
@@ -316,10 +282,20 @@ input {
 	position: relative;
 	line-height: 0;
 }
+
+.login li input:focus{
+  border-bottom: 1px solid #f6bc0b;
+}
+
+.login li.active input {
+  	border-bottom: 1px solid #f6bc0b;
+}
+.login li.Regactive input {
+  	border-bottom: 1px solid #d6000f;
+}
 .login li input:focus {
   	border-bottom: 1px solid #f6bc0b;
 }
-
 .login .phone::before {
 	position: absolute;
 	content: "";
@@ -401,7 +377,7 @@ input {
 }
 .m-reg .prompt {
 	font-size: 0.24rem;
-	color: #f6bc0b;
+	color: #d6000f;
 	display: inline-block;
 	position: absolute;
 	bottom: -0.24rem;
