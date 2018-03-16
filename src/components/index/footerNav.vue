@@ -1,8 +1,8 @@
 <template>
     <div class="footer">
         <ul>
-            <li class="home active">
-                <a href="index.html">
+            <li class="home" :class="{active:homeActive}">
+                <a href="javascript:;" @click='homePage'>
                     <span>首页</span>
                 </a>
             </li>
@@ -12,7 +12,7 @@
                     <i>53</i>
                 </a>
             </li>
-            <li class="center">
+            <li class="center" @click="openUpfile" :class="{active:upfileActive}">
                 <span class="add"></span>
             </li>
             <li class="qa">
@@ -20,13 +20,13 @@
                     <span>问答</span>
                 </a>
             </li>
-            <li class="my">
-                <a href="javascript:;">
+            <li class="my" :class="{active:myActive}">
+                <a href="javascript:;" @click="myPage">
                     <span>我的</span>
                 </a>
             </li>
         </ul>
-        <div class="upfile">
+        <div class="upfile" :class="{active:upfileActive}">
             <a href="" class="up-video">
                 上传视频
             </a>
@@ -39,7 +39,47 @@
 
 <script>
     export default {
-
+        data () {
+            return {
+                upfileActive:false,
+                myActive:false,
+                homeActive:true,
+            }
+        },
+        methods: {
+            openUpfile(){
+                this.upfileActive = !this.upfileActive;
+            },
+            // 首页
+            homePage(){
+                this.myActive = false;
+                this.homeActive = true;
+                this.$emit('homepage');
+            },
+            // 我的页面
+            myPage(){
+                this.myActive = true;
+                this.homeActive = false;
+                this.$emit('mypage');
+                
+            },
+            // 判断当前是那一页
+            ifPage(){
+                if(this.$store.state.pageIndex == 1){
+                    this.myActive = false;
+                    this.homeActive = true;
+                }else if(this.$store.state.pageIndex == 4){
+                    this.myActive = true;
+                    this.homeActive = false;
+                }
+            }
+        },
+        mounted () {
+            this.$nextTick(()=>{
+                console.log(this.$store.state.roleType);
+            })
+            this.ifPage();
+        }
     }
 </script>
 
@@ -136,6 +176,14 @@
         background: rgba(0, 0, 0, 0.5);
         overflow: hidden;
         transition: all .3s ease;
+    }
+    .footer .upfile.active{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100vw;
+        height: 3rem;
+        margin-left: -50vw;
     }
     .footer .upfile a{
         display: block;

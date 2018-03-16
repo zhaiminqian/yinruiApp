@@ -1,6 +1,6 @@
 <template>
     <header class="title-top">
-        <a href="javascript:;" class="go" @click="ReturnGo"></a>
+        <slot name='returnUp'><a href="javascript:;" class="go" @click="ReturnGo"></a></slot>
         <slot name='title'></slot>
         <slot name='ok'></slot>
     </header>
